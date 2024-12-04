@@ -1,0 +1,460 @@
+/**
+ * 1. 更改所有浏览器中的默认字体族（这是一种建议）
+ * 2. 更正所有浏览器中的行高
+ * 3. 防止在 iOS 和 Windows Phone 中改变设备方向时字体大小自动调整
+ */
+
+/* 文档
+   ========================================================================== */
+
+html {
+  font-family: sans-serif; /* 1 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+/* 章节
+     ========================================================================== */
+
+/**
+   * 移除所有浏览器的默认外边距（这是一种建议）
+   */
+
+body {
+  margin: 0;
+}
+
+/**
+   * 为 IE 9- 添加正确的显示方式
+   */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+   * 修正 Chrome、Firefox 和 Safari 中 section 和 article 
+   * 内部 h1 元素的字体大小和边距
+   */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* 内容分组
+     ========================================================================== */
+
+/**
+   * 为 IE 9- 添加正确的显示方式
+   * 1. 为 IE 添加正确的显示方式
+   */
+
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+   * 为 IE 8 添加正确的边距
+   */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+   * 1. 在 Firefox 中添加正确的盒模型
+   * 2. 在 Edge 和 IE 中显示溢出部分
+   */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+   * 1. 修正所有浏览器中字体大小的继承和缩放
+   * 2. 修正所有浏览器中奇数的 em 字体大小
+   */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* 文本级语义
+     ========================================================================== */
+
+/**
+   * 1. 移除 IE 10 中活动链接的灰色背景
+   * 2. 移除 iOS 8+ 和 Safari 8+ 中链接下划线的间隙
+   */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+   * 当链接处于活动状态或悬停状态时移除其轮廓
+   * 在所有浏览器中（这是一种建议）
+   */
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+   * 1. 移除 Firefox 39- 中的底部边框
+   * 2. 在 Chrome、Edge、IE、Opera 和 Safari 中添加正确的文本装饰
+   */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+   * 防止 Safari 6 中下一条规则重复应用 bolder
+   */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+   * 在 Chrome、Edge 和 Safari 中添加正确的字体粗细
+   */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+   * 1. 修正所有浏览器中字体大小的继承和缩放
+   * 2. 修正所有浏览器中奇数的 em 字体大小
+   */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+   * 在 Android 4.3- 中添加正确的字体样式
+   */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+   * 在 IE 9- 中添加正确的背景色和颜色
+   */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+   * 在所有浏览器中添加正确的字体大小
+   */
+
+small {
+  font-size: 80%;
+}
+
+/**
+   * 防止 sub 和 sup 元素影响所有浏览器的行高
+   */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* 嵌入内容
+     ========================================================================== */
+
+/**
+   * 在 IE 9- 中添加正确的显示方式
+   */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+   * 在 iOS 4-7 中隐藏没有控件的音频
+   */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+   * 移除 IE 10- 中链接内图片的边框
+   */
+
+img {
+  border-style: none;
+}
+
+/**
+   * 在 IE 中隐藏溢出部分
+   */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* 表单
+     ========================================================================== */
+
+/**
+   * 1. 更改所有浏览器中的字体样式（这是一种建议）
+   * 2. 移除 Firefox 和 Safari 中的边距
+   */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+   * 在 IE 中显示溢出部分
+   * 1. 在 Edge 中显示溢出部分
+   */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+   * 移除 Edge、Firefox 和 IE 中的文本转换继承
+   * 1. 移除 Firefox 中的文本转换继承
+   */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+   * 1. 防止 WebKit bug，其中 (2) 会在 Android 4 中破坏原生的
+   *    audio 和 video 控件
+   * 2. 修正 iOS 和 Safari 中无法设置可点击类型的样式
+   */
+
+button,
+  html [type="button"], /* 1 */
+  [type="reset"],
+  [type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+   * 移除 Firefox 中的内边框和内边距
+   */
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+   * 恢复上一条规则未设置的焦点样式
+   */
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+   * 更改所有浏览器中的边框、边距和内边距（这是一种建议）
+   */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+   * 1. 修正 Edge 和 IE 中的文本换行
+   * 2. 修正 IE 中 fieldset 元素的颜色继承
+   * 3. 移除内边距以避免开发者在将 fieldset 元素的内边距
+   *    设为 0 时在所有浏览器中遇到问题
+   */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+   * 1. 在 IE 9- 中添加正确的显示方式
+   * 2. 在 Chrome、Firefox 和 Opera 中添加正确的垂直对齐方式
+   */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+   * 移除 IE 中的默认垂直滚动条
+   */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+   * 1. 在 IE 10- 中添加正确的盒模型
+   * 2. 移除 IE 10- 中的内边距
+   */
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+   * 修正 Chrome 中增减按钮的光标样式
+   */
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+   * 1. 修正 Chrome 和 Safari 中的奇怪外观
+   * 2. 修正 Safari 中的轮廓样式
+   */
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+   * 移除 macOS 上 Chrome 和 Safari 中的内边距和取消按钮
+   */
+
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+   * 1. 修正 iOS 和 Safari 中无法设置可点击类型的样式
+   * 2. 在 Safari 中将字体属性改为继承
+   */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* 交互
+     ========================================================================== */
+
+/*
+   * 在 IE 9- 中添加正确的显示方式
+   * 1. 在 Edge、IE 和 Firefox 中添加正确的显示方式
+   */
+
+details, /* 1 */
+  menu {
+  display: block;
+}
+
+/*
+   * 在所有浏览器中添加正确的显示方式
+   */
+
+summary {
+  display: list-item;
+}
+
+/* 脚本
+     ========================================================================== */
+
+/**
+   * 在 IE 9- 中添加正确的显示方式
+   */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+   * 在 IE 中添加正确的显示方式
+   */
+
+template {
+  display: none;
+}
+
+/* 隐藏
+     ========================================================================== */
+
+/**
+   * 在 IE 10- 中添加正确的显示方式
+   */
+
+[hidden] {
+  display: none;
+}
