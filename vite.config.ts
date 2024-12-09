@@ -1,14 +1,11 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
-// 自动引入element-plus组件
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
-// https://vite.dev/config/
 export default defineConfig({
   base: '/',
   css: {
@@ -21,7 +18,6 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
-    // 自动引入element-plus
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),
@@ -32,6 +28,25 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      vue: 'vue/dist/vue.esm-bundler.js',
     },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vue: ['vue'],
+          'vue-router': ['vue-router'],
+          'element-plus': ['element-plus'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1500,
+    commonjsOptions: {
+      esmExternals: true,
+    },
+  },
+  optimizeDeps: {
+    include: ['vue', 'vue-router', 'element-plus'],
   },
 })
