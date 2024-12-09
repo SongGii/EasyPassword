@@ -149,7 +149,7 @@ const handleClear = () => {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     :deep(.el-card__header) {
-      border-bottom: 2px solid #409eff1a;
+      border-bottom: 2px solid rgba(64, 158, 255, 0.1);
     }
 
     .card-header {
@@ -195,10 +195,8 @@ const handleClear = () => {
   }
 }
 
-:deep(.el-button) {
-  &.is-circle {
-    padding: 8px;
-  }
+:deep(.el-button.is-circle) {
+  padding: 8px;
 }
 
 :deep(.el-input__wrapper),
