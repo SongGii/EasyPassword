@@ -1,9 +1,6 @@
 <template>
-  <div class="warp">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
-    </el-container>
+  <div class="app">
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,9 +11,4 @@ if (num === 2) {
 }
 </script>
 
-<style lang="scss" scoped>
-.warp {
-  width: 100vw;
-  height: 100vh;
-}
-</style>
+<style lang="scss" scoped></style>
