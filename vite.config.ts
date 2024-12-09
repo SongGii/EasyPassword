@@ -7,7 +7,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
-  base: '/',
+  base: './', // 修改这里，使用相对路径
   css: {
     preprocessorOptions: {
       scss: {
@@ -28,25 +28,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      vue: 'vue/dist/vue.esm-bundler.js',
     },
   },
   build: {
+    assetsDir: 'assets', // 指定静态资源目录
+    cssCodeSplit: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vue: ['vue'],
-          'vue-router': ['vue-router'],
-          'element-plus': ['element-plus'],
-        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
       },
     },
-    chunkSizeWarningLimit: 1500,
-    commonjsOptions: {
-      esmExternals: true,
-    },
-  },
-  optimizeDeps: {
-    include: ['vue', 'vue-router', 'element-plus'],
   },
 })
