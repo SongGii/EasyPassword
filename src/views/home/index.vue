@@ -9,6 +9,9 @@
         <el-button type="success" size="large" class="choice-button" @click="router.push('/encrypt')">
           加密
         </el-button>
+        <el-button type="success" size="large" class="choice-button" @click="router.push('/gpt')">
+          gpt
+        </el-button>
       </div>
     </div>
   </div>
