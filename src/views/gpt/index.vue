@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <iframe style="width: 100vw;height: 100vh;" width="100vw" height="100vh" src="https://chat18.aichatosaa.com/#/chat"
+    <iframe style="width: 100vw;height: 100vh;" width="100vw" height="100vh" src="https://kimi.moonshot.cn/"
       frameborder="0"></iframe>
   </div>
 </template>
