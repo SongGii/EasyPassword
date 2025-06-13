@@ -5,6 +5,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
   base: './', // 修改这里，使用相对路径
@@ -24,6 +25,14 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: '1bb4e60b12e65d81f56d17f0aa2df54d.txt',
+          dest: ''
+        }
+      ]
+    })
   ],
   resolve: {
     alias: {
